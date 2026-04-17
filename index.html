@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C300 Gallery Upload</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">C300 <span>Gallery Upload</span></h1>
+        <p class="subtitle">Upload an image and it will be sent to the gallery via Gist.</p>
+
+        <div class="card" id="dropZone">
+            <div class="drop-inner" id="dropInner">
+                <div class="drop-icon">📁</div>
+                <p>Drag & drop an image here</p>
+                <p class="or">or</p>
+                <div class="file-btns">
+                    <label class="file-btn" for="fileInput">Choose File</label>
+                    <button class="file-btn paste-btn" id="pasteBtn">📋 Paste from Clipboard</button>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+            <div class="preview-wrap" id="previewWrap" style="display:none">
+                <img id="previewImg" src="" alt="Preview">
+                <button class="remove-btn" id="removeImg">✕ Remove</button>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="descInput">Description</label>
+            <input type="text" id="descInput" placeholder="Short caption for the image..." maxlength="120">
+        </div>
+
+        <div class="field">
+            <label for="codeInput">GitHub Token</label>
+            <input type="password" id="codeInput" placeholder="ghp_..." autocomplete="current-password">
+            <p class="field-note">Your token is remembered in this browser. Needs only <code>gist</code> scope.</p>
+        </div>
+
+        <button class="submit-btn" id="submitBtn" disabled>Upload to Gallery</button>
+
+        <div class="status" id="status"></div>
+    </div>
+
+    <script src="upload.js"></script>
+</body>
+</html>
